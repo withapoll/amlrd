@@ -3,5 +3,6 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // base: '/amlrd/', //это ломает инмиджи втф???
   plugins: [vue()],
 })

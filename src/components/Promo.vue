@@ -8,6 +8,7 @@
     <div class="icons">
         <FontAwesomeIcon :icon="['fab', 'linkedin']" />
         <FontAwesomeIcon :icon="['fab', 'github']" />
+        <FontAwesomeIcon :icon="['fab', 'pinterest']" />
     </div>
     <div class="undertext">
         <p>Я дизайню и разрабатываю web продукты и мобильные приложения под Android</p>
@@ -18,9 +19,9 @@
 import { ref, onMounted } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub, faPinterest } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faLinkedin, faGithub)
+library.add(faLinkedin, faGithub, faPinterest)
 
 const fullPromo = 'product designer who can code'
 const typedPromo = ref('')
