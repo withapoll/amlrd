@@ -1,0 +1,35 @@
+:root {
+  font-family: 'Roboto', 'Roboto', sans-serif;
+  src: url('./assets/fonts/roboto/Roboto-Regular.ttf' ) format('truetype');
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #F5F5F5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1 {
+  font-family: 'Doto Rounded', sans-serif;
+  src: url('./fonts/Doto/Doto-Rounded-Black.ttf') format('truetype');
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+h4 {
+  font-family: 'Doto Rounded', sans-serif;
+  src: url('./fonts/Doto/Doto-Rounded-Black.ttf') format('truetype');
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
