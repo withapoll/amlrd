@@ -11,63 +11,72 @@
       </div>
       <div class="project-img-wrap">
         <img class="project-img" :src="project.img" :alt="project.title" />
-        <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-arrow">
+        <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-arrow" v-if="project.link">
           <span>></span>
         </a>
+        <span class="project-arrow" v-else>></span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import imgCalendar from '/images/dotcalendar-snap.png'
+import imgNetwrk from '/images/netwrk-snap.png'
+import imgHabit from '/images/.habit-snap.png'
+import imgDoubleb from '/images/doubleb-snap.png'
+import imgInlink from '/images/inlink-snap.png'
+import imgItPark from '/images/it-park-snap.png'
+import imgRustore from '/images/rustore-snap.png'
+
 const projects = [
   {
     year: '2025',
     title: '.CALENDAR',
     role: 'ANDROID DEVELOPER',
-    img: '/images/dotcalendar-snap.png',
+    img: imgCalendar,
     link: 'https://dprofile.ru/case/142589/calendar'
   },
   {
     year: '2025',
     title: 'NETWRK',
     role: 'UX/UI DESIGNER',
-    img: '/images/netwrk-snap.png',
+    img: imgNetwrk,
     link: 'https://dprofile.ru/case/142612/netwrk-connect-meetup-discuss'
   },
   {
     year: '2025',
     title: '.HABIT',
     role: 'ANDROID DEV',
-    img: '/images/.habit-snap.png',
+    img: imgHabit,
     link: ''
   },
   {
     year: '2023, 2025',
     title: 'DOUBLEB',
     role: 'WEB DEVELOPER (VUE.JS)',
-    img: '/images/doubleb-snap.png',
+    img: imgDoubleb,
     link: 'https://github.com/withapoll/DoubleB'
   },
   {
     year: '2024',
     title: 'INLINK',
     role: 'UX/UI DESIGNER',
-    img: '/images/inlink-snap.png',
+    img: imgInlink,
     link: ''
   },
   {
     year: '2024',
     title: 'IT-PARK',
     role: 'WEB DESIGNER',
-    img: '/images/it-park-snap.png',
+    img: imgItPark,
     link: 'https://itpark32.ru/'
   },
   {
     year: '2022',
     title: 'RUSTORE REDESIGN',
     role: 'UX/UI DESIGNER',
-    img: '/images/rustore-snap.png',
+    img: imgRustore,
     link: 'https://vc.ru/design/470947-redizain-rustore-chto-ne-tak-s-dizainom-rossiiskogo-magazina-prilozhenii-ot-komandy-vk'
   }
 ]

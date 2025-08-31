@@ -15,27 +15,27 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+// Импорт изображений для корректной обработки Vite
+import img1 from '/images/1.png'
+import img2 from '/images/2.png'
+import img3 from '/images/3.png'
+import img4 from '/images/4.png'
+import img5 from '/images/5.png'
+import img6 from '/images/6.png'
+import img7 from '/images/7.png'
+import img8 from '/images/8.png'
+import img9 from '/images/9.png'
+import img10 from '/images/10.png'
+import img11 from '/images/11.png'
+
 const scrollContainer1 = ref(null)
 const scrollContainer2 = ref(null)
 let scrollInterval1 = null
 let scrollInterval2 = null
 
-const imagesLeft = [
-  '/images/1.png',
-  '/images/2.png',
-  '/images/3.png',
-  '/images/4.png',
-  '/images/5.png',
-]
-
-const imagesRight = [
-  '/images/6.png',
-  '/images/7.png',
-  '/images/8.png',
-  '/images/9.png',
-  '/images/10.png',
-  '/images/11.png',
-]
+// Массивы с импортированными изображениями
+const imagesLeft = [img1, img2, img3, img4, img5]
+const imagesRight = [img6, img7, img8, img9, img10, img11]
 
 onMounted(() => {
   scrollInterval1 = setInterval(() => {
@@ -75,8 +75,8 @@ onUnmounted(() => {
     padding: 1em;
     gap: 0.5em;
     scroll-behavior: auto;
-    
 }
+
 .left-scroll-images__item img {
     max-width: 220px;
     border-radius: 16px;
@@ -89,6 +89,7 @@ onUnmounted(() => {
     gap: 0.5em;
     scroll-behavior: auto;
 }
+
 .right-scroll-images__item img {
     max-width: 220px;
     border-radius: 16px;
@@ -99,6 +100,7 @@ onUnmounted(() => {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .left-scroll-images::-webkit-scrollbar,
 .right-scroll-images::-webkit-scrollbar {
   display: none;
