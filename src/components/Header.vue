@@ -18,13 +18,13 @@ header {
 }
 
 .links {
-  font-family: "Doto Rounded Black", sans-serif;
+  font-family: 'Doto Rounded', monospace, sans-serif;
   display: flex;
   gap: 1rem;
 }
 
 h4 {
-  font-family: "Doto Rounded Black", sans-serif;
+  font-family: 'Doto Rounded', monospace, sans-serif;
   font-size: 0.8em;
   margin: 0;
 }

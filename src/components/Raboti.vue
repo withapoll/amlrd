@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
 .switch button {
   background: none;
   border: none;
-  font-family: 'Doto', sans-serif;
+  font-family: 'Doto Rounded', monospace, sans-serif;
   font-size: 0.9em;
   color: #333;
   padding: 0.6em 0.6em;
