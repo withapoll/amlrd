@@ -11,7 +11,9 @@
       </div>
       <div class="project-img-wrap">
         <img class="project-img" :src="project.img" :alt="project.title" />
-        <span class="project-arrow">></span>
+        <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-arrow">
+          <span>></span>
+        </a>
       </div>
     </div>
   </div>
@@ -23,43 +25,50 @@ const projects = [
     year: '2025',
     title: '.CALENDAR',
     role: 'ANDROID DEVELOPER',
-    img: '/images/dotcalendar-snap.png'
+    img: '/images/dotcalendar-snap.png',
+    link: 'https://dprofile.ru/case/142589/calendar'
   },
   {
     year: '2025',
     title: 'NETWRK',
     role: 'UX/UI DESIGNER',
-    img: '/images/netwrk-snap.png'
+    img: '/images/netwrk-snap.png',
+    link: 'https://dprofile.ru/case/142612/netwrk-connect-meetup-discuss'
   },
   {
     year: '2025',
     title: '.HABIT',
     role: 'ANDROID DEV',
-    img: '/images/.habit-snap.png'
+    img: '/images/.habit-snap.png',
+    link: ''
   },
   {
     year: '2023, 2025',
     title: 'DOUBLEB',
     role: 'WEB DEVELOPER (VUE.JS)',
-    img: '/images/doubleb-snap.png'
+    img: '/images/doubleb-snap.png',
+    link: 'https://github.com/withapoll/DoubleB'
   },
   {
     year: '2024',
     title: 'INLINK',
     role: 'UX/UI DESIGNER',
-    img: '/images/inlink-snap.png'
+    img: '/images/inlink-snap.png',
+    link: ''
   },
   {
     year: '2024',
     title: 'IT-PARK',
     role: 'WEB DESIGNER',
-    img: '/images/it-park-snap.png'
+    img: '/images/it-park-snap.png',
+    link: 'https://itpark32.ru/'
   },
   {
     year: '2022',
     title: 'RUSTORE REDESIGN',
     role: 'UX/UI DESIGNER',
-    img: '/images/rustore-snap.png'
+    img: '/images/rustore-snap.png',
+    link: 'https://vc.ru/design/470947-redizain-rustore-chto-ne-tak-s-dizainom-rossiiskogo-magazina-prilozhenii-ot-komandy-vk'
   }
 ]
 </script>
@@ -124,7 +133,10 @@ const projects = [
   font-weight: bold;
   margin-left: 0.5em;
   user-select: none;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-
-
+.project-arrow:hover {
+  color: #e55a10;
+}
 </style>

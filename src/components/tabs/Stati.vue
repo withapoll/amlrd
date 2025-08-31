@@ -7,7 +7,7 @@
         <p class="article__desc">
           Как Я и моя команда придумывали концепцию молодежной подписки для Альфа Банка и попали в топ 30
         </p>
-        <a class="project__link" href="#">
+        <a class="project__link" href="https://vc.ru/services/1604757-kak-my-pridumyvali-koncepciyu-molodezhnoi-podpiski-dlya-alfa-banka-i-popali-v-top-30-alfa-case-camp">
           <FontAwesomeIcon :icon="['fas', 'link']" />
                     link
         </a>
@@ -20,7 +20,7 @@
         <p class="article__desc">
           Умное приложение для Умного Дома. OneHome — дизайн-кейс с хакатона
         </p>
-        <a class="project__link" href="#">
+        <a class="project__link" href="https://vc.ru/design/653295-umnoe-prilozhenie-dlya-umnogo-doma-onehome-dizain-keis-s-hakatona">
           <FontAwesomeIcon :icon="['fas', 'link']" />
                     link
         </a>
@@ -56,7 +56,6 @@ library.add(faLink)
 
 .article__title {
   font-size: 1.2em;
-  font-weight: bold;
   margin: 0.5em 0 0.2em 0;
 }
 .article__desc {
@@ -64,7 +63,7 @@ library.add(faLink)
   margin-bottom: 0.5em;
 }
 .article__link {
-  color: #B7B7B7;
+  color: #888;
   font-size: 0.95em;
   text-decoration: none;
   display: inline-block;

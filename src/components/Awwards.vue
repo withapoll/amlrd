@@ -3,7 +3,7 @@
     <div class="awards-grid">
       <div class="awards-title">AWARDS</div>
       <div class="awards-item">CUP MOSCOW 2024 15%<br>HIGH QUALITY AWARDS</div>
-      <div class="awards-item">30/350 ALFA CASE<br>CAMP 2024</div>
+      <div class="awards-item">TOP 30/350 ALFA CASE<br>CAMP 2024</div>
       <div class="awards-item">SEMI-FINALIST<br>HIGHER SCHOOL OF ECONOMICS</div>
       <div class="awards-item">1ST PLACE IN ENGINEER HACKATHON<br>UNI STANKIN</div>
     </div>

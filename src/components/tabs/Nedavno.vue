@@ -7,7 +7,7 @@
           <span class="project__year">2025</span>
           <span class="project__title">netwrk - соцсеть для нетворка</span>
         </div>
-        <a class="project__link" href="#">
+        <a class="project__link" href="https://dprofile.ru/case/142612/netwrk-connect-meetup-discuss">
           <FontAwesomeIcon :icon="['fas', 'link']" />
                     link
         </a>
@@ -20,7 +20,7 @@
           <span class="project__year">2025</span>
           <span class="project__title">.Calendar</span>
         </div>
-        <a class="project__link" href="#">
+        <a class="project__link" href="https://dprofile.ru/case/142589/calendar">
           <FontAwesomeIcon :icon="['fas', 'link']" />
                     link
         </a>

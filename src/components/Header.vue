@@ -5,8 +5,8 @@
     <h4 class="h1">AMLRD</h4>
 
     <div class="links">
-      <a href="https://vite.dev" target="_blank"> LinkedIn </a>
-      <a href="https://vite.dev" target="_blank"> Github </a>
+      <a href="https://www.linkedin.com/in/withapoll/" target="_blank"> LinkedIn </a>
+      <a href="https://dprofile.ru/amlrd" target="_blank"> Dprofile </a>
     </div>
   </header>
 </template>
@@ -33,5 +33,6 @@ a {
   font-size: 0.8em;
   text-decoration: none;
   color: inherit;
+  text-transform: uppercase;
 }
 </style>
