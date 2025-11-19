@@ -14,6 +14,7 @@
       <div class="devstack-item">POSTGRESQL</div>
       <div class="devstack-item">REST API</div>
       <div class="devstack-item">UX/UI DESIGN</div>
+      <div class="devstack-item">PYTHON</div>
     </div>
   </div>
 </template>
@@ -28,12 +29,12 @@
 .devstack-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
   gap: 1em 1.3em;
   align-items: start;
 }
 .devstack-title {
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 5;
   grid-column: 1 / 2;
   font-family: 'Doto Rounded', monospace, sans-serif;
   font-size: 1em;

@@ -23,7 +23,7 @@
 <script setup>
 import imgCalendar from '/images/dotcalendar-snap.png'
 import imgNetwrk from '/images/netwrk-snap.png'
-import imgHabit from '/images/.habit-snap.png'
+// import imgHabit from '/images/.habit-snap.png'
 import imgDoubleb from '/images/doubleb-snap.png'
 import imgInlink from '/images/inlink-snap.png'
 import imgItPark from '/images/it-park-snap.png'
@@ -44,13 +44,13 @@ const projects = [
     img: imgNetwrk,
     link: 'https://dprofile.ru/case/142612/netwrk-connect-meetup-discuss'
   },
-  {
-    year: '2025',
-    title: '.HABIT',
-    role: 'ANDROID DEV',
-    img: imgHabit,
-    link: ''
-  },
+  // {
+  //   year: '2025',
+  //   title: '.HABIT',
+  //   role: 'ANDROID DEV',
+  //   img: imgHabit,
+  //   link: ''
+  // },
   {
     year: '2023, 2025',
     title: 'DOUBLEB',
@@ -63,7 +63,7 @@ const projects = [
     title: 'INLINK',
     role: 'UX/UI DESIGNER',
     img: imgInlink,
-    link: ''
+    link: 'https://dprofile.ru/case/150571/inlink-device-tracker-app'
   },
   {
     year: '2024',

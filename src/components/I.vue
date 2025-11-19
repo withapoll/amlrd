@@ -8,7 +8,7 @@
     <div class="button-block">
         <div class="switch">
         <button class="button">
-            <a href="https://t.me/withapoll" target="_blank" rel="noopener noreferrer">Connect</a>
+            <a href="https://t.me/amlrds" target="_blank" rel="noopener noreferrer">Connect</a>
         </button>
     </div>
     </div>

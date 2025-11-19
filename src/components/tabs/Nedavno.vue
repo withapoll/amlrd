@@ -1,6 +1,19 @@
 <template>
   <div class="recent-projects">
     <div class="project">
+      <img class="project__img" src="/images/bom4.png" alt="выступление на онлайн митапе" />
+      <div class="project__content">
+        <div class="project__meta">
+          <span class="project__year">2025</span>
+          <span class="project__title">Выступление на митапе "Хакатоны и Кейс Чемпионаты как быстрый трек в карьеру" </span>
+        </div>
+        <a class="project__link" href="https://vkvideo.ru/playlist/-58525095_34/video-58525095_456240185?linked=1">
+          <FontAwesomeIcon :icon="['fas', 'link']" />
+                    link
+        </a>
+      </div>
+    </div>
+    <div class="project">
       <img class="project__img" src="/images/netwrk.png" alt="netwrk - соцсеть для нетворка" />
       <div class="project__content">
         <div class="project__meta">
@@ -53,6 +66,7 @@ library.add(faLink)
   width: 100%;
   display: block;
   object-fit: cover;
+    border-radius: 3rem;
 }
 
 .project__meta {
