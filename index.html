@@ -4,11 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AMLRD · product designer who can code</title>
-  <meta name="description" content="Эндрю (amlrd), продуктовый дизайнер, который умеет в код. Делаю веб-продукты и свои проекты, двигаюсь в data engineering." />
+  <meta name="description" content="Эндрю (amlrd) — продуктовый дизайнер, который умеет в код. Делаю веб-продукты на заказ, развиваю Netwrk и ухожу в data engineering." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Space Grotesk and Doto have no Cyrillic glyphs — Manrope carries the
+       Russian text so it doesn't fall through to whatever the OS ships. -->
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- reveals start at opacity:0 and JS turns them on — if JS never runs,
+       everything below the fold would stay invisible. This undoes that. -->
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
   <a class="skip-link" href="#work">К работам</a>
@@ -20,7 +25,7 @@
       <nav class="nav__links" aria-label="Основная навигация">
         <a href="#work">Работы</a>
         <a href="#stack">Стек</a>
-        <a href="#awards">Награды</a>
+        <a class="nav__gh" href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub</a>
         <a class="nav__cta" href="https://t.me/amlrds" target="_blank" rel="noopener">
           <span class="dot" aria-hidden="true"></span>Связаться
         </a>
@@ -39,9 +44,9 @@
         <span class="line">who <em>can code</em></span>
       </h1>
       <p class="hero__lead reveal">
-        Проектирую и разрабатываю веб-продукты и работаю над своими проектами.
-        Опыт в дизайне и в разработке даёт цельное видение продукта: веду его
-        от первого макета до релиза. Сейчас ухожу глубже в стек, в data engineering.
+        Придумываю продукты и довожу до релиза: от первых скетчей до кода
+        в проде. Сейчас строю аналитический слой для своего проекта
+        и ухожу в data engineering.
       </p>
 
       <div class="hero__actions reveal">
@@ -50,10 +55,10 @@
       </div>
 
       <ul class="hero__socials reveal" aria-label="Профили">
+        <li><a class="is-key" href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub<span class="is-key__note">код и пет-проекты</span></a></li>
         <li><a href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a></li>
-        <li><a href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://instagram.com/withapoll" target="_blank" rel="noopener">Instagram</a></li>
+        <!-- <li><a href="https://instagram.com/withapoll" target="_blank" rel="noopener">Instagram</a></li> -->
       </ul>
     </section>
 
@@ -70,17 +75,31 @@
         </div>
         <div class="spec__item reveal">
           <dt>Статус</dt>
-          <dd><span class="status"><span class="dot dot--live" aria-hidden="true"></span>Открыт к дизайн и веб-заказам</span></dd>
+          <dd><span class="status"><span class="dot dot--live" aria-hidden="true"></span>Открыт к дизайн- и веб-заказам</span></dd>
         </div>
-        <div class="spec__item reveal">
+        <div class="spec__item spec__item--wide reveal">
           <dt>Фокус</dt>
-          <dd>Data Engineering</dd>
+          <dd>Data Engineering:<br />строю аналитический контур Netwrk</dd>
         </div>
       </dl>
-      <p class="spec__note reveal">
-        Делаю веб-продукты на заказ и развиваю собственные проекты. Параллельно
-        углубляюсь в data engineering: данные, пайплайны, хранилища.
-      </p>
+    </section>
+
+    <!-- ───────────────────────── NOW ───────────────────────── -->
+    <section class="now wrap" aria-labelledby="now-title">
+      <h2 class="now__label" id="now-title">
+        <span class="dot dot--live" aria-hidden="true"></span>Сейчас
+      </h2>
+      <div class="now__body">
+        <p class="now__p reveal">
+          Делаю <strong>Netwrk</strong>: платформу нетворкинга для IT-митапов.
+          Придумал продукт, собрал команду, вошли в топ-20 предакселератора.
+          Отвечаю за продукт, дизайн и слой данных.
+        </p>
+        <p class="now__p reveal">
+          Параллельно учусь на дата-инженера: SQL, PostgreSQL, пайплайны.
+          Код <a href="https://github.com/withapoll" target="_blank" rel="noopener">на GitHub</a>.
+        </p>
+      </div>
     </section>
 
     <!-- ───────────────────────── WORK ───────────────────────── -->
@@ -103,13 +122,17 @@
       <ul class="grid" id="work-grid">
               <!-- ───────────────────────── projects ───────────────────────── -->
         <li class="card reveal" data-type="projects">
-          <a class="card__link" href="#" aria-label="Проект: Netwtk">
+          <a class="card__link" href="https://t.me/amlrds" target="_blank" rel="noopener" aria-label="Netwrk — написать про проект">
             <div class="card__media">
               <img src="https://cdn.dprofile.ru/public/1585/142612/2e015b4eae0a3caa474dfe1fbf1d1acf49dd1b91.png" alt="" loading="lazy" width="720" height="540" />
             </div>
             <div class="card__body">
               <h3 class="card__title">Netwrk</h3>
-              <p class="card__meta"><span>2026</span><span>Design · Development</span></p>
+              <p class="card__meta"><span>2026</span><span>Продукт · Дизайн · Данные</span></p>
+              <p class="card__note">
+                Платформа нетворкинга для IT-ивентов. Бэкенд на стороне
+                коллеги. Топ-20 предакселератора.
+              </p>
             </div>
           </a>
         </li>
@@ -130,8 +153,11 @@
               <img src="https://user-images.githubusercontent.com/59768263/297371052-24a85b3d-488e-4bcf-99a4-22fba70d955e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ4MzAxMDgsIm5iZiI6MTc4NDgyOTgwOCwicGF0aCI6Ii81OTc2ODI2My8yOTczNzEwNTItMjRhODViM2QtNDg4ZS00YmNmLTk5YTQtMjJmYmE3MGQ5NTVlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNzIzVDE4MDMyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5ZDdhNTZjMmMzNzg1ZjAwZWYwMTk0ZTg0NmExY2Y0ZTZiYzQ4MTA4ZTVjNzU5OTRkZmNmYzU0MmNjMjJjODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.rkrM3wC3w9Rni4_a6tg7a3GhJT-WizgmFSZLfMlmTiA" alt="" loading="lazy" width="720" height="540" />
             </div>
             <div class="card__body">
-              <h3 class="card__title">CRM Приложение для DoubleB</h3>
+              <h3 class="card__title">CRM для DoubleB</h3>
               <p class="card__meta"><span>2025</span><span>Vue · Supabase</span></p>
+              <p class="card__note">
+                Веб-приложение для управления заказами. Задеплоено.
+              </p>
             </div>
           </a>
         </li>
@@ -191,7 +217,7 @@
             </div>
             <div class="card__body">
               <h3 class="card__title">Умное приложение для Умного Дома. OneHome — дизайн-кейс с хакатона</h3>
-              <p class="card__meta"><span>Статья</span><span>Product</span><span>5 мин</span></p></p>
+              <p class="card__meta"><span>Статья</span><span>Product</span><span>5 мин</span></p>
             </div>
           </a>
         </li>
@@ -214,60 +240,27 @@
       <div class="section-head reveal">
         <span class="section-index" aria-hidden="true">02</span>
         <h2 class="section-title" id="stack-title">Стек</h2>
-        <p class="section-sub">С чем работаю на дизайне, фронте и бэке, и куда двигаюсь дальше.</p>
+        <p class="section-sub">Чем работаю каждый день — и что осваиваю прямо сейчас.</p>
       </div>
 
       <div class="stack__groups">
         <div class="stack__group reveal">
           <h3>Дизайн</h3>
-          <ul><li>Исследование Рынка & Аудитории</li><li>UX Исследование</li><li>UI Design</li><li>Прототипирование</li><li>Дизайн-системы</li></ul>
+          <ul><li>Исследование рынка и аудитории</li><li>UX-исследование</li><li>UI</li><li>Прототипирование</li><li>Дизайн-системы</li></ul>
         </div>
         <div class="stack__group reveal">
           <h3>Frontend</h3>
           <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Vue.js</li><li>React.js</li></ul>
         </div>
         <div class="stack__group reveal">
-          <h3>Backend</h3>
-          <ul><li>Supabase</li><li>PostgreSQL</li><li>REST API</li><li>Python</li></ul>
+          <h3>Backend и данные</h3>
+          <ul><li>Python</li><li>PostgreSQL</li><li>Supabase</li><li>REST API</li><li>SQL</li></ul>
         </div>
         <div class="stack__group stack__group--focus reveal">
-          <h3>Data Engineering <span class="stack__tag">→ направление</span></h3>
-          <ul><li>SQL</li><li>dbt</li><li>Apache Airflow</li><li>Хранилища данных</li></ul>
+          <h3>Учу сейчас <span class="stack__tag">data engineering</span></h3>
+          <ul><li>Apache Airflow</li><li>dbt</li><li>Моделирование хранилищ</li></ul>
         </div>
       </div>
-    </section>
-
-    <!-- ───────────────────────── AWARDS ───────────────────────── -->
-    <section class="awards wrap" id="awards" aria-labelledby="awards-title">
-      <div class="section-head reveal">
-        <span class="section-index" aria-hidden="true">03</span>
-        <h2 class="section-title" id="awards-title">Награды</h2>
-        <p class="section-sub">Кейс-чемпионаты и хакатоны последних лет.</p>
-      </div>
-
-      <ol class="awards__list">
-        <li class="award reveal">
-          <span class="award__year">2024</span>
-          <span class="award__body">
-            <span class="award__place">Топ 15% · High Quality Awards</span>
-            <span class="award__event">CUP Moscow</span>
-          </span>
-        </li>
-        <li class="award reveal">
-          <span class="award__year">2024</span>
-          <span class="award__body">
-            <span class="award__place">Топ 30 / 350 · полуфиналист</span>
-            <span class="award__event">Alfa Case Camp · НИУ ВШЭ &amp;&amp; SBS Consulting</span>
-          </span>
-        </li>
-        <li class="award reveal">
-          <span class="award__year">2024</span>
-          <span class="award__body">
-            <span class="award__place">1 место</span>
-            <span class="award__event">Инженерный хакатон · СТАНКИН</span>
-          </span>
-        </li>
-      </ol>
     </section>
 
     <!-- ───────────────────────── CONTACT ───────────────────────── -->
@@ -276,6 +269,7 @@
         <p class="contact__eyebrow"><span class="dot dot--live" aria-hidden="true"></span>Открыт к предложениям</p>
         <h2 class="contact__title" id="contact-title">Давайте сделаем<br />хороший продукт.</h2>
         <p class="contact__lead">Ищу команду, где дизайн и разработка не живут в разных мирах. Напишите, обсудим.</p>
+        <p class="contact__sub">Делаю лендинги, веб-приложения и продуктовый дизайн под ключ.</p>
         <div class="contact__actions">
           <a class="btn btn--primary" href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram · @amlrds</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
@@ -286,15 +280,22 @@
 
   <!-- ───────────────────────── FOOTER ───────────────────────── -->
   <footer class="footer">
-    <div class="wrap footer__inner">
-      <a class="wordmark wordmark--sm" href="#top">AMLRD</a>
-      <nav class="footer__links" aria-label="Профили в подвале">
-        <a href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a>
-        <a href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram</a>
-      </nav>
-      <p class="footer__copy">© <span id="year">2025</span> amlrd</p>
+    <div class="wrap">
+      <p class="footer__awards">
+        <span class="footer__awards-label">Награды</span>
+        Инженерный хакатон СТАНКИН — 1 место · Alfa Case Camp — топ-30/350 ·
+        CUP Moscow — топ-15%
+      </p>
+      <div class="footer__inner">
+        <a class="wordmark wordmark--sm" href="#top">AMLRD</a>
+        <nav class="footer__links" aria-label="Профили в подвале">
+          <a href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a>
+        </nav>
+        <p class="footer__copy">© <span id="year">2025</span> amlrd</p>
+      </div>
     </div>
   </footer>
 

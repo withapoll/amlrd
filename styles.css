@@ -18,9 +18,12 @@
   --accent-ink: oklch(0.44 0.155 39);    /* accent as text on paper — 7.66:1 */
   --live:       oklch(0.62 0.17 150);
 
-  /* type */
-  --f-display: "Doto", ui-monospace, monospace;
-  --f-sans: "Space Grotesk", system-ui, sans-serif;
+  /* type — Space Grotesk and Doto are Latin-only, so Cyrillic falls through to
+     the next family in the stack. Manrope catches it (geometric, sits well next
+     to Space Grotesk); without it Russian text renders in whatever the OS has,
+     which differs on Windows, macOS and Android. */
+  --f-display: "Doto", "Manrope", ui-monospace, monospace;
+  --f-sans: "Space Grotesk", "Manrope", system-ui, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
   /* spacing — 4px base */
@@ -207,6 +210,10 @@ ul, ol { list-style: none; padding: 0; }
 }
 .hero__socials a::before { content: "↗"; margin-right: 0.35em; color: var(--accent); opacity: 0.7; }
 @media (hover: hover) and (pointer: fine) { .hero__socials a:hover { color: var(--ink); } }
+/* GitHub is the link that matters most right now — pull it out of the row */
+.hero__socials a.is-key { color: var(--ink); font-weight: 500; }
+.hero__socials a.is-key::before { opacity: 1; }
+.is-key__note { color: var(--ink-faint); font-weight: 400; margin-left: 0.5em; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -250,17 +257,41 @@ ul, ol { list-style: none; padding: 0; }
 }
 .spec__item dd { font-size: 0.9375rem; line-height: 1.4; color: var(--ink); }
 .status { display: inline-flex; align-items: center; gap: 0.5rem; }
-.spec__note {
-  margin-top: var(--sp-5); max-width: 60ch;
-  font-family: var(--f-mono); font-size: 0.8125rem; line-height: 1.7;
-  color: var(--ink-soft);
+/* the focus cell carries a full sentence — keep it from crowding its neighbour */
+.spec__item--wide dd { text-wrap: pretty; }
+
+/* ============================================================
+   NOW — the trajectory in three sentences, so nobody has to guess
+   ============================================================ */
+.now {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: var(--sp-5);
+  align-items: start;
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--line);
 }
+.now__label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--f-mono); font-weight: 400;
+  font-size: 0.6875rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-faint);
+  padding-top: 0.3rem;
+}
+.now__body { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 62ch; }
+.now__p { color: var(--ink-soft); line-height: 1.65; text-wrap: pretty; }
+.now__p strong { color: var(--ink); font-weight: 600; }
+.now__p a {
+  color: var(--accent-ink);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+@media (hover: hover) and (pointer: fine) { .now__p a:hover { color: var(--ink); } }
 
 /* ============================================================
    SECTION HEADS
    ============================================================ */
 section { position: relative; }
-.work, .stack, .awards { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.work, .stack { padding-block: clamp(3.5rem, 7vw, 6rem); }
 .section-head {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -361,6 +392,12 @@ section { position: relative; }
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   width: 3px; height: 3px; border-radius: 50%; background: var(--line-strong);
 }
+/* one line of plain prose where the scope needs stating (who built what) */
+.card__note {
+  margin-top: var(--sp-3);
+  font-size: 0.875rem; line-height: 1.55;
+  color: var(--ink-soft); text-wrap: pretty;
+}
 
 /* ============================================================
    STACK
@@ -386,27 +423,6 @@ section { position: relative; }
 .stack__group li::before {
   content: ""; width: 5px; height: 5px; border-radius: 1px;
   background: var(--accent); flex: none; transform: rotate(45deg);
-}
-
-/* ============================================================
-   AWARDS — editorial list, not identical cards
-   ============================================================ */
-.awards__list { border-top: 1px solid var(--line-strong); }
-.award {
-  display: grid;
-  grid-template-columns: 5rem 1fr;
-  gap: var(--sp-4);
-  align-items: baseline;
-  padding-block: var(--sp-5);
-  border-bottom: 1px solid var(--line);
-  transition: background 200ms var(--ease-out);
-}
-.award__year { font-family: var(--f-mono); font-size: 0.8125rem; color: var(--ink-faint); }
-.award__body { display: flex; flex-direction: column; gap: 0.25rem; }
-.award__place { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem); font-weight: 600; letter-spacing: -0.01em; }
-.award__event { color: var(--ink-soft); font-size: 0.9375rem; }
-@media (hover: hover) and (pointer: fine) {
-  .award:hover { background: linear-gradient(90deg, oklch(0.678 0.192 39 / 0.05), transparent 60%); }
 }
 
 /* ============================================================
@@ -437,7 +453,11 @@ section { position: relative; }
   line-height: 1.04; letter-spacing: -0.025em;
   margin-bottom: var(--sp-4); text-wrap: balance;
 }
-.contact__lead { color: oklch(0.82 0.015 70); max-width: 46ch; margin-bottom: var(--sp-6); }
+.contact__lead { color: oklch(0.82 0.015 70); max-width: 46ch; margin-bottom: var(--sp-3); }
+.contact__sub {
+  font-family: var(--f-mono); font-size: 0.8125rem; line-height: 1.6;
+  color: oklch(0.72 0.02 70); max-width: 48ch; margin-bottom: var(--sp-6);
+}
 .contact__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
 .contact .btn--ghost { --btn-fg: var(--paper); border-color: oklch(0.99 0.01 70 / 0.28); }
 @media (hover: hover) and (pointer: fine) {
@@ -448,6 +468,18 @@ section { position: relative; }
    FOOTER
    ============================================================ */
 .footer { border-top: 1px solid var(--line); padding-block: var(--sp-6); }
+/* awards, compressed to a single line — context for design clients, noise for everyone else */
+.footer__awards {
+  font-family: var(--f-mono); font-size: 0.75rem; line-height: 1.7;
+  color: var(--ink-faint); text-wrap: pretty;
+  padding-bottom: var(--sp-5); margin-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--line);
+}
+.footer__awards-label {
+  display: block;
+  font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 0.35rem;
+}
 .footer__inner {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: var(--sp-4);
@@ -473,8 +505,10 @@ section { position: relative; }
    ============================================================ */
 @media (max-width: 720px) {
   .spec__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-5) var(--sp-4); }
-  .nav__links > a:not(.nav__cta) { display: none; }
-  .award { grid-template-columns: 3.5rem 1fr; gap: var(--sp-3); }
+  /* section anchors go, but GitHub stays — it's the link that matters most */
+  .nav__links > a:not(.nav__cta):not(.nav__gh) { display: none; }
+  .now { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .now__label { padding-top: 0; }
 }
 
 /* ============================================================
