@@ -147,6 +147,9 @@ ul, ol { list-style: none; padding: 0; }
   padding: 0.5rem 0.9rem; border-radius: var(--r-pill);
   transition: transform 160ms var(--ease-out), background 200ms var(--ease-out);
 }
+/* `.nav__links > a` above is more specific than `.nav__cta` and was winning the
+   colour, which left the button's label dark grey on near-black (~1.9:1) */
+.nav__links > a.nav__cta { color: var(--paper); }
 @media (hover: hover) and (pointer: fine) {
   .nav__cta:hover { background: var(--accent); }
 }
@@ -256,7 +259,23 @@ ul, ol { list-style: none; padding: 0; }
   text-transform: uppercase; color: var(--ink-faint);
 }
 .spec__item dd { font-size: 0.9375rem; line-height: 1.4; color: var(--ink); }
-.status { display: inline-flex; align-items: center; gap: 0.5rem; }
+/* .status { display: inline-flex; align-items: center; gap: 0.5rem; } */
+/* the status is a full sentence now and wraps to several lines:
+   keep the dot on the first line instead of centring it against the block */
+.status { display: inline-flex; align-items: baseline; gap: 0.5rem; }
+.status .dot { transform: translateY(-0.15em); }
+
+/* status chips: готов / в работе */
+.tag {
+  display: inline-flex; align-items: center; gap: 0.4em;
+  font-family: var(--f-mono); font-size: 0.6875rem; font-weight: 400;
+  line-height: 1; letter-spacing: 0.04em; white-space: nowrap;
+  padding: 0.35em 0.65em; border-radius: var(--r-pill);
+  border: 1px solid var(--line-strong); color: var(--ink-soft);
+}
+.tag::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex: none; }
+.tag--done { color: oklch(0.42 0.12 150); border-color: oklch(0.62 0.17 150 / 0.45); }
+.tag--wip  { color: var(--accent-ink); border-color: oklch(0.64 0.205 40 / 0.45); }
 /* the focus cell carries a full sentence — keep it from crowding its neighbour */
 .spec__item--wide dd { text-wrap: pretty; }
 
@@ -278,7 +297,26 @@ ul, ol { list-style: none; padding: 0; }
   text-transform: uppercase; color: var(--ink-faint);
   padding-top: 0.3rem;
 }
-.now__body { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 62ch; }
+/* .now__body { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 62ch; } */
+.now__body { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 54rem; }
+/* three projects with a status each: name + chip on the left, one line of substance on the right */
+.now__item {
+  display: grid;
+  grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-5);
+  align-items: baseline;
+  padding-block: var(--sp-4);
+  border-top: 1px solid var(--line);
+}
+.now__item:first-child { border-top: 0; padding-top: 0; }
+.now__item:last-child { padding-bottom: 0; }
+.now__name {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.65rem;
+  font-weight: 600; color: var(--ink);
+}
+.now__name a { text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+@media (hover: hover) and (pointer: fine) { .now__name a:hover { color: var(--accent-ink); text-decoration-color: currentColor; } }
+.now__text { color: var(--ink-soft); line-height: 1.6; text-wrap: pretty; }
 .now__p { color: var(--ink-soft); line-height: 1.65; text-wrap: pretty; }
 .now__p strong { color: var(--ink); font-weight: 600; }
 .now__p a {
@@ -310,6 +348,13 @@ section { position: relative; }
   line-height: 1.1; letter-spacing: -0.02em;
 }
 .section-sub { grid-column: 2; color: var(--ink-soft); max-width: 48ch; margin-top: 0.5rem; }
+.section-sub a {
+  color: var(--accent-ink);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+@media (hover: hover) and (pointer: fine) { .section-sub a:hover { color: var(--ink); } }
+/* «Раньше» sits right under «Данные» as its quieter second half */
+.work--earlier { padding-top: 0; }
 
 /* ============================================================
    TABS — segmented control with sliding indicator
@@ -354,6 +399,8 @@ section { position: relative; }
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
   gap: clamp(1rem, 2.5vw, 1.75rem);
 }
+/* three data cards should sit in one row on a laptop too, not break into 2 + 1 */
+.grid--trio { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
 .card { }
 .card.is-hidden { display: none; }
 .card__link { display: block; }
@@ -384,12 +431,22 @@ section { position: relative; }
 .card__body { padding-top: var(--sp-3); }
 .card__title { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
 .card__meta {
-  display: flex; gap: var(--sp-3); margin-top: 0.3rem;
+  /* display: flex; gap: var(--sp-3); margin-top: 0.3rem; */
+  /* baseline: a long label wraps inside its own span, and the year (or the
+     status chip) stays lined up with its first line */
+  display: flex; align-items: baseline; gap: var(--sp-3); margin-top: 0.3rem;
   font-family: var(--f-mono); font-size: 0.75rem; color: var(--ink-faint);
 }
+/* short facts (year, type, read time, status) never break; only the
+   descriptive label in second place gives way and wraps when it's tight */
+.card__meta > span { flex: 0 0 auto; white-space: nowrap; }
+.card__meta > span:nth-child(2):not(.tag) { flex-shrink: 1; white-space: normal; }
 .card__meta span + span { position: relative; padding-left: var(--sp-3); }
 .card__meta span + span::before {
-  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  /* content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); */
+  /* 0.8em = the middle of the first line, so the dot doesn't drift between
+     lines when the label wraps */
+  content: ""; position: absolute; left: 0; top: 0.8em; transform: translateY(-50%);
   width: 3px; height: 3px; border-radius: 50%; background: var(--line-strong);
 }
 /* one line of plain prose where the scope needs stating (who built what) */
@@ -397,6 +454,145 @@ section { position: relative; }
   margin-top: var(--sp-3);
   font-size: 0.875rem; line-height: 1.55;
   color: var(--ink-soft); text-wrap: pretty;
+}
+/* roadmap of a project that is still in progress: filled dot = done */
+.card__plan {
+  margin-top: var(--sp-3);
+  display: flex; flex-direction: column; gap: 0.35rem;
+  font-family: var(--f-mono); font-size: 0.75rem; line-height: 1.45; color: var(--ink-faint);
+}
+.card__plan li { display: flex; align-items: baseline; gap: 0.55rem; }
+.card__plan li::before {
+  content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%;
+  border: 1px solid var(--line-strong);
+}
+.card__plan li.is-done { color: var(--ink-soft); }
+.card__plan li.is-done::before { background: var(--live); border-color: var(--live); }
+.card__plan li.is-done::after { content: "· готово"; color: oklch(0.42 0.12 150); }
+
+/* ============================================================
+   CASE — the featured data project: task → pipeline → decisions
+   ============================================================ */
+.case {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.case__top {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+}
+.case__media {
+  display: block; overflow: hidden;
+  border-radius: var(--r-md); border: 1px solid var(--line);
+  aspect-ratio: 4 / 3; background: var(--paper-2);
+}
+.case__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.92);
+  transition: transform 600ms var(--ease-out), filter 400ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .case__media:hover img { transform: scale(1.03); filter: saturate(1.02); }
+}
+.case__meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem var(--sp-3);
+  font-family: var(--f-mono); font-size: 0.75rem; color: var(--ink-faint);
+}
+.case__title {
+  margin-top: var(--sp-3);
+  font-weight: 600; font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+  line-height: 1.1; letter-spacing: -0.02em;
+}
+.case__task { margin-top: var(--sp-4); max-width: 52ch; line-height: 1.6; text-wrap: pretty; }
+.case__label {
+  display: block; margin-bottom: 0.35rem;
+  font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.case__note { margin-top: var(--sp-3); max-width: 52ch; font-size: 0.875rem; line-height: 1.55; color: var(--ink-soft); }
+.case__cta { margin-top: var(--sp-5); }
+.case__cta::after { content: "↗"; margin-left: 0.5em; color: var(--accent); }
+
+/* the pipeline as real text, not a picture: five stages, left to right */
+.pipe {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--sp-5);
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-top: 1px solid var(--line);
+}
+.pipe__step {
+  position: relative;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  padding: var(--sp-3);
+  background: var(--paper-2);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.pipe__step + .pipe__step::before {
+  content: "→";
+  position: absolute; top: 50%; left: calc(var(--sp-5) * -1); width: var(--sp-5);
+  transform: translateY(-50%); text-align: center;
+  font-family: var(--f-mono); font-size: 0.875rem; line-height: 1; color: var(--accent);
+}
+.pipe__stage {
+  font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent-ink);
+}
+.pipe__what { font-family: var(--f-mono); font-size: 0.75rem; line-height: 1.5; color: var(--ink-soft); }
+
+.case__decisions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  counter-reset: decision;
+}
+.case__decisions li { counter-increment: decision; }
+.case__decisions h4 {
+  display: flex; align-items: baseline; gap: 0.6rem;
+  font-size: 1rem; font-weight: 600; letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+.case__decisions h4::before {
+  content: counter(decision, decimal-leading-zero);
+  font-family: var(--f-display); font-weight: 600; font-size: 0.875rem; color: var(--accent);
+}
+.case__decisions p { font-size: 0.875rem; line-height: 1.6; color: var(--ink-soft); text-wrap: pretty; }
+.case__decisions code {
+  font-family: var(--f-mono); font-size: 0.8125rem; white-space: nowrap;
+  padding: 0.1em 0.35em; border-radius: 4px;
+  background: var(--paper-2); color: var(--ink);
+}
+
+/* ============================================================
+   COMPACT GRID — same card markup, lower visual weight:
+   small thumbnail on the left, title and meta on the right
+   ============================================================ */
+.grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  gap: 0 clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--line-strong);
+}
+.grid--compact .card { border-bottom: 1px solid var(--line); }
+.grid--compact .card__link {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: var(--sp-4);
+  align-items: center;
+  padding-block: var(--sp-4);
+}
+.grid--compact .card__media { border-radius: var(--r-sm); }
+.grid--compact .card__media::after { display: none; }
+.grid--compact .card__body { padding-top: 0; }
+.grid--compact .card__title { font-size: 0.9375rem; line-height: 1.35; text-wrap: pretty; }
+@media (hover: hover) and (pointer: fine) {
+  .grid--compact .card__link:hover .card__title { color: var(--accent-ink); }
 }
 
 /* ============================================================
@@ -418,12 +614,18 @@ section { position: relative; }
 .stack__group ul { display: flex; flex-direction: column; gap: 0.55rem; }
 .stack__group li {
   font-size: 0.9375rem; color: var(--ink);
-  display: flex; align-items: center; gap: 0.6rem;
+  /* display: flex; align-items: center; gap: 0.6rem; */
+  /* baseline, not center: «Дизайн» is one long line that wraps, and the
+     marker should stay on its first line */
+  display: flex; align-items: baseline; gap: 0.6rem;
 }
 .stack__group li::before {
   content: ""; width: 5px; height: 5px; border-radius: 1px;
-  background: var(--accent); flex: none; transform: rotate(45deg);
+  /* background: var(--accent); flex: none; transform: rotate(45deg); */
+  background: var(--accent); flex: none; transform: translateY(-2px) rotate(45deg);
 }
+/* still learning these: hollow marker instead of a filled one */
+.stack__group--learning li::before { background: transparent; border: 1px solid var(--accent); }
 
 /* ============================================================
    CONTACT
@@ -453,12 +655,17 @@ section { position: relative; }
   line-height: 1.04; letter-spacing: -0.025em;
   margin-bottom: var(--sp-4); text-wrap: balance;
 }
-.contact__lead { color: oklch(0.82 0.015 70); max-width: 46ch; margin-bottom: var(--sp-3); }
+/* spacing now hangs off the top of each block, so the layout holds
+   whether .contact__sub is in the markup or commented out */
+/* .contact__lead { color: oklch(0.82 0.015 70); max-width: 46ch; margin-bottom: var(--sp-3); } */
+.contact__lead { color: oklch(0.82 0.015 70); max-width: 46ch; }
 .contact__sub {
   font-family: var(--f-mono); font-size: 0.8125rem; line-height: 1.6;
-  color: oklch(0.72 0.02 70); max-width: 48ch; margin-bottom: var(--sp-6);
+  /* color: oklch(0.72 0.02 70); max-width: 48ch; margin-bottom: var(--sp-6); */
+  color: oklch(0.72 0.02 70); max-width: 48ch; margin-top: var(--sp-3);
 }
-.contact__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+/* .contact__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); } */
+.contact__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-6); }
 .contact .btn--ghost { --btn-fg: var(--paper); border-color: oklch(0.99 0.01 70 / 0.28); }
 @media (hover: hover) and (pointer: fine) {
   .contact .btn--ghost:hover { --btn-bg: var(--paper); --btn-fg: var(--ink); border-color: var(--paper); }
@@ -503,7 +710,23 @@ section { position: relative; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+/* five pipeline stages stop fitting side by side: stack them, arrows point down */
+@media (max-width: 900px) {
+  .pipe { grid-template-columns: 1fr; }
+  .pipe__step { flex-direction: row; align-items: baseline; gap: var(--sp-3); }
+  .pipe__stage { flex: none; width: 5.5rem; }
+  .pipe__step + .pipe__step::before {
+    content: "↓";
+    top: calc(var(--sp-5) * -1); left: var(--sp-3); width: auto;
+    height: var(--sp-5); line-height: var(--sp-5);
+    transform: none;
+  }
+}
+
 @media (max-width: 720px) {
+  .case__top { grid-template-columns: 1fr; }
+  .case__decisions { grid-template-columns: 1fr; }
+  .now__item { grid-template-columns: 1fr; }
   .spec__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-5) var(--sp-4); }
   /* section anchors go, but GitHub stays — it's the link that matters most */
   .nav__links > a:not(.nav__cta):not(.nav__gh) { display: none; }

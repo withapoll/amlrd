@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMLRD · product designer who can code</title>
-  <meta name="description" content="Эндрю (amlrd) — продуктовый дизайнер, который умеет в код. Делаю веб-продукты на заказ, развиваю Netwrk и ухожу в data engineering." />
+  <!-- <title>AMLRD · product designer who can code</title> -->
+  <title>Андрей Полунин · Data Engineer</title>
+  <!-- <meta name="description" content="Эндрю (amlrd) — продуктовый дизайнер, который умеет в код. Делаю веб-продукты на заказ, развиваю Netwrk и ухожу в data engineering." /> -->
+  <meta name="description" content="Junior Data Engineer с продуктовым бэкграундом. Строю пайплайны и витрины на Python, SQL и PostgreSQL. Ищу позицию или стажировку в продуктовой команде." />
+
+  <!-- Превью ссылки в Telegram / VK / LinkedIn. Без этих тегов мессенджер
+       собирает карточку сам из <title> и description. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amlrd.tech/" />
+  <meta property="og:site_name" content="amlrd.tech" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Андрей Полунин · Data Engineer" />
+  <meta property="og:description" content="Строю пайплайны и витрины на Python, SQL и PostgreSQL. Ищу позицию Junior DE или стажировку в продуктовой команде." />
+  <meta name="twitter:card" content="summary" />
+  <!-- TODO: картинка превью 1200×630. Положи файл в репозиторий и раскомментируй,
+       ссылка обязательно абсолютная:
+  <meta property="og:image" content="https://amlrd.tech/og.png" />
+  <meta name="twitter:card" content="summary_large_image" /> -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Space Grotesk and Doto have no Cyrillic glyphs — Manrope carries the
@@ -37,27 +53,48 @@
     <!-- ───────────────────────── HERO ───────────────────────── -->
     <section class="hero wrap" aria-labelledby="hero-title">
       <p class="hero__eyebrow reveal">
-        <span class="tilde" aria-hidden="true">~</span> привет, я Эндрю<span class="muted">, digital</span>
+        <!-- <span class="tilde" aria-hidden="true">~</span> привет, я Эндрю<span class="muted">, digital</span> -->
+        <span class="tilde" aria-hidden="true">~</span> привет, я Эндрю<span class="muted">, </span> 
       </p>
       <h1 class="hero__title reveal" id="hero-title">
-        <span class="line">product designer</span>
-        <span class="line">who <em>can code</em></span>
+        <!-- <span class="line">product designer</span>
+        <span class="line">who <em>can code</em></span> -->
+        <!-- Артикль вынес из <em>: на ноутбуках строка переносится, и «a» повисала
+             одинокой оранжевой буквой после «with». Твой вариант:
+        <span class="line">data engineer </span>
+        <span class="line"> with <em>a product mind</em></span> -->
+        <span class="line">data engineer</span>
+        <span class="line">with a <em>product mind</em></span>
       </h1>
-      <p class="hero__lead reveal">
+      <!-- <p class="hero__lead reveal">
         Придумываю продукты и довожу до релиза: от первых скетчей до кода
         в проде. Сейчас строю аналитический слой для своего проекта
         и ухожу в data engineering.
+      </p> -->
+      <p class="hero__lead reveal">
+        Шёл от того, как данные показывают, к тому, откуда они берутся.
+        Строю пайплайны и витрины на Python, SQL и PostgreSQL, а дизайн и фронтенд помогают понимать,
+        зачем эти данные продукту.
       </p>
 
+      <!-- <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="https://t.me/amlrds" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="#work">Смотреть работы</a>
+      </div> -->
       <div class="hero__actions reveal">
         <a class="btn btn--primary" href="https://t.me/amlrds" target="_blank" rel="noopener">Написать в Telegram</a>
+        <!-- TODO: подставь в href ссылку на PDF резюме (сейчас заглушка "#").
+             Если файл лежит в этом же репозитории, добавь атрибут download. -->
+        <a class="btn btn--ghost" href="#" data-todo="resume">Скачать резюме</a>
         <a class="btn btn--ghost" href="#work">Смотреть работы</a>
       </div>
 
       <ul class="hero__socials reveal" aria-label="Профили">
         <li><a class="is-key" href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub<span class="is-key__note">код и пет-проекты</span></a></li>
         <li><a href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a></li>
+        <li><a href="mailto:drew7@vk.com">drew7@vk.com</a></li>
+        <!-- Dprofile переехал в блок «Раньше: продукт и дизайн» -->
+        <!-- <li><a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a></li> -->
         <!-- <li><a href="https://instagram.com/withapoll" target="_blank" rel="noopener">Instagram</a></li> -->
       </ul>
     </section>
@@ -67,7 +104,8 @@
       <dl class="spec__grid">
         <div class="spec__item reveal">
           <dt>Роль</dt>
-          <dd>Product Designer<br />+ Web Dev</dd>
+          <!-- <dd>Product Designer<br />+ Web Dev</dd> -->
+           <dd>Junior Data Engineer</dd>
         </div>
         <div class="spec__item reveal">
           <dt>Город</dt>
@@ -75,11 +113,13 @@
         </div>
         <div class="spec__item reveal">
           <dt>Статус</dt>
-          <dd><span class="status"><span class="dot dot--live" aria-hidden="true"></span>Открыт к дизайн- и веб-заказам</span></dd>
+          <!-- <dd><span class="status"><span class="dot dot--live" aria-hidden="true"></span>Открыт к дизайн- и веб-заказам</span></dd> -->
+           <dd><span class="status"><span class="dot dot--live" aria-hidden="true"></span>Ищу позицию Junior DE или стажировку в продуктовой команде</span></dd>
         </div>
         <div class="spec__item spec__item--wide reveal">
           <dt>Фокус</dt>
-          <dd>Data Engineering:<br />строю аналитический контур Netwrk</dd>
+          <!-- <dd>Data Engineering:<br />строю аналитический контур Netwrk</dd> -->
+           <dd>Пайплайны, хранилища, качество данных</dd>
         </div>
       </dl>
     </section>
@@ -90,15 +130,46 @@
         <span class="dot dot--live" aria-hidden="true"></span>Сейчас
       </h2>
       <div class="now__body">
-        <p class="now__p reveal">
+        <!-- <p class="now__p reveal">
           Делаю <strong>Netwrk</strong>: платформу нетворкинга для IT-митапов.
           Придумал продукт, собрал команду, вошли в топ-20 предакселератора.
           Отвечаю за продукт, дизайн и слой данных.
         </p>
         <p class="now__p reveal">
-          Параллельно учусь на дата-инженера: SQL, PostgreSQL, пайплайны.
-          Код <a href="https://github.com/withapoll" target="_blank" rel="noopener">на GitHub</a>.
-        </p>
+          Параллельно создаю проекты: ЦБ ETL (готов), Рынок data-вакансий (в работе: dbt, Airflow) <a href="https://github.com/withapoll" target="_blank" rel="noopener">на GitHub</a>.
+        </p> -->
+        <ol class="now__list">
+          <li class="now__item reveal">
+            <p class="now__name">
+              <a href="https://github.com/withapoll/CBR-ETL" target="_blank" rel="noopener">ЦБ ETL</a>
+              <span class="tag tag--done">готов</span>
+            </p>
+            <p class="now__text">
+              Batch-ETL курсов валют ЦБ РФ на Python и PostgreSQL:
+              идемпотентная загрузка, бэкфилл, проверки качества.
+            </p>
+          </li>
+          <li class="now__item reveal">
+            <p class="now__name">
+              <a href="https://github.com/withapoll/vacancies-market" target="_blank" rel="noopener">Рынок data-вакансий</a>
+              <span class="tag tag--wip">в работе</span>
+            </p>
+            <p class="now__text">
+              Ежедневные снапшоты вакансий из нескольких источников.
+              На этом проекте осваиваю dbt и Airflow.
+            </p>
+          </li>
+          <li class="now__item reveal">
+            <p class="now__name">
+              <a href="https://t.me/netwrkapp" target="_blank" rel="noopener">Netwrk</a>
+              <span class="tag">продукт</span>
+            </p>
+            <p class="now__text">
+              Платформа нетворкинга для IT-митапов, топ-20 предакселератора.
+              Отвечаю за модель данных и продукт.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -106,20 +177,105 @@
     <section class="work wrap" id="work" aria-labelledby="work-title">
       <div class="section-head reveal">
         <span class="section-index" aria-hidden="true">01</span>
-        <h2 class="section-title" id="work-title">Лента</h2>
-        <p class="section-sub">Проекты, статьи и то, над чем работаю прямо сейчас.</p>
+        <!-- <h2 class="section-title" id="work-title">Лента</h2> -->
+        <h2 class="section-title" id="work-title">Данные</h2>
+        <!-- <p class="section-sub">Проекты, статьи и то, над чем работаю прямо сейчас / работал раньше.</p> -->
+        <p class="section-sub">Пайплайны, витрины и модели данных: что уже работает и что в работе.</p>
       </div>
 
-      <div class="tabs reveal" role="tablist" aria-label="Фильтр работ">
-        <span class="tabs__indicator" aria-hidden="true"></span>
-        <button class="tab is-active" role="tab" aria-selected="true" data-filter="all">Всё</button>
-        <button class="tab" role="tab" aria-selected="false" data-filter="recent">Недавно</button>
-        <button class="tab" role="tab" aria-selected="false" data-filter="articles">Статьи</button>
-        <button class="tab" role="tab" aria-selected="false" data-filter="projects">Проекты</button>
-      </div>
+      <!-- Табы-фильтр («Всё / Недавно / Статьи / Проекты») переехали ниже,
+           в блок «Раньше», и там закомментированы. -->
+
+      <!-- ───────────── ЦБ ETL: задача → схема → три решения → GitHub ───────────── -->
+      <article class="case reveal" aria-labelledby="case-cbr-title">
+        <div class="case__top">
+          <a class="case__media" href="https://github.com/withapoll/CBR-ETL" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <!-- ЗАГЛУШКА (случайное фото по теме). Сюда просится твоя схема пайплайна. -->
+            <img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=960&h=720&q=70" alt="" loading="lazy" width="960" height="720" />
+          </a>
+          <div class="case__body">
+            <p class="case__meta">
+              <span class="tag tag--done">готов</span>
+              <span>2026</span>
+              <span>Python · PostgreSQL · Docker</span>
+            </p>
+            <h3 class="case__title" id="case-cbr-title">ЦБ ETL</h3>
+            <p class="case__task">
+              <span class="case__label">Задача</span>
+              Каждый день забирать курсы валют ЦБ РФ, хранить историю и считать
+              по ней витрины. Так, чтобы повторный запуск и догрузка прошлых
+              дней ничего не ломали.
+            </p>
+            <p class="case__note">
+              Тесты на pytest. CI в GitHub Actions поднимает PostgreSQL
+              и прогоняет их на каждый push.
+            </p>
+            <a class="btn btn--ghost case__cta" href="https://github.com/withapoll/CBR-ETL" target="_blank" rel="noopener">Код на GitHub</a>
+          </div>
+        </div>
+
+        <ol class="pipe" aria-label="Схема пайплайна">
+          <li class="pipe__step"><span class="pipe__stage">Источник</span><span class="pipe__what">API ЦБ РФ</span></li>
+          <li class="pipe__step"><span class="pipe__stage">Raw</span><span class="pipe__what">raw_rates, JSONB как пришло</span></li>
+          <li class="pipe__step"><span class="pipe__stage">Core</span><span class="pipe__what">rates, строка на дату и валюту</span></li>
+          <li class="pipe__step"><span class="pipe__stage">Витрины</span><span class="pipe__what">изменение за день, среднее за 7 дней, волатильность</span></li>
+          <li class="pipe__step"><span class="pipe__stage">Проверки</span><span class="pipe__what">6 SQL-проверок, итог в dq_log</span></li>
+        </ol>
+
+        <ol class="case__decisions">
+          <li>
+            <h4>Идемпотентность</h4>
+            <p>
+              Upsert по ключу «дата + валюта»: повторный запуск обновляет
+              строки, а не плодит дубли. Сырой ответ и разобранные строки пишу
+              одной транзакцией.
+            </p>
+          </li>
+          <li>
+            <h4>Бэкфилл</h4>
+            <p>
+              Флаг <code>--backfill N</code> догружает последние N дней.
+              Упавшая дата не останавливает остальные, но процесс вернёт
+              код 1, чтобы планировщик это увидел.
+            </p>
+          </li>
+          <li>
+            <h4>Проверки качества</h4>
+            <p>
+              После каждой загрузки: свежесть, пропуски публикаций, скачки
+              курса, смена номинала. Проверка уровня error завершает запуск
+              с ошибкой.
+            </p>
+          </li>
+        </ol>
+      </article>
 
       <!-- Замени карточки на реальные проекты: title / meta / href / img -->
-      <ul class="grid" id="work-grid">
+      <!-- <ul class="grid" id="work-grid"> -->
+      <ul class="grid grid--trio">
+        <li class="card reveal" data-type="data">
+          <a class="card__link" href="https://github.com/withapoll/vacancies-market" target="_blank" rel="noopener" aria-label="Проект: Рынок data-вакансий">
+            <div class="card__media">
+              <!-- ЗАГЛУШКА (случайное фото по теме) -->
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=960&h=720&q=70" alt="" loading="lazy" width="720" height="540" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Рынок data-вакансий</h3>
+              <p class="card__meta"><span class="tag tag--wip">в работе</span><span>2026</span><span>dbt · Airflow</span></p>
+              <p class="card__note">
+                Ежедневные снапшоты вакансий из нескольких источников:
+                сведение схем, сопоставление компаний и навыков, жизненный
+                цикл вакансий.
+              </p>
+              <ol class="card__plan" aria-label="План">
+                <li class="is-done">Raw-слой и окружение в Docker</li>
+                <li>Ежедневные снапшоты из источников</li>
+                <li>Сведение схем, компании и навыки на dbt</li>
+                <li>Оркестрация в Airflow</li>
+              </ol>
+            </div>
+          </a>
+        </li>
               <!-- ───────────────────────── projects ───────────────────────── -->
         <li class="card reveal" data-type="projects">
           <a class="card__link" href="https://t.me/netwrkapp" target="_blank" rel="noopener" aria-label="Netwrk — написать про проект">
@@ -128,7 +284,8 @@
             </div>
             <div class="card__body">
               <h3 class="card__title">Netwrk</h3>
-              <p class="card__meta"><span>2026</span><span>Продукт · Дизайн · Данные</span></p>
+              <!-- <p class="card__meta"><span>2026</span><span>Продукт · Дизайн · Данные</span></p> -->
+              <p class="card__meta"><span>2026</span><span>Модель данных · Продукт · Аналитика</span></p>
               <p class="card__note">
                 Платформа нетворкинга для IT-ивентов. Бэкенд на стороне
                 коллеги. Топ-20 предакселератора.
@@ -136,6 +293,75 @@
             </div>
           </a>
         </li>
+        <!-- Карточка .Calendar переехала без изменений в блок «Раньше» ниже. -->
+        <li class="card reveal" data-type="projects">
+          <a class="card__link" href="https://github.com/withapoll/doubleB-CRM" aria-label="Проект: crm-платформа">
+            <div class="card__media">
+              <!-- ЗАГЛУШКА (случайное фото по теме). Старая картинка ниже: её подписанная
+                   ссылка истекла 23.07.2026 и больше не открывается. -->
+              <img src="https://images.unsplash.com/photo-1777372307561-38fbe6a2eb02?auto=format&fit=crop&w=960&h=720&q=70" alt="" loading="lazy" width="720" height="540" />
+              <!-- <img src="https://user-images.githubusercontent.com/59768263/297371052-24a85b3d-488e-4bcf-99a4-22fba70d955e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ4MzAxMDgsIm5iZiI6MTc4NDgyOTgwOCwicGF0aCI6Ii81OTc2ODI2My8yOTczNzEwNTItMjRhODViM2QtNDg4ZS00YmNmLTk5YTQtMjJmYmE3MGQ5NTVlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNzIzVDE4MDMyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5ZDdhNTZjMmMzNzg1ZjAwZWYwMTk0ZTg0NmExY2Y0ZTZiYzQ4MTA4ZTVjNzU5OTRkZmNmYzU0MmNjMjJjODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.rkrM3wC3w9Rni4_a6tg7a3GhJT-WizgmFSZLfMlmTiA" alt="" loading="lazy" width="720" height="540" /> -->
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">CRM для DoubleB</h3>
+              <!-- <p class="card__meta"><span>2025</span><span>Vue · Supabase</span></p> -->
+              <p class="card__meta"><span>2025</span><span>Реляционная схема БД · PostgreSQL · Vue</span></p>
+              <p class="card__note">
+                Веб-приложение для управления заказами. Задеплоено.
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <!-- CCDP (CoffeeChain Data Platform) закреплён у тебя на GitHub, но в плане правок
+             его не было, а в roadmap пока закрыт один пункт. Карточка готова,
+             раскомментируй, когда решишь показывать:
+        <li class="card reveal" data-type="data">
+          <a class="card__link" href="https://github.com/withapoll/CCDP" target="_blank" rel="noopener" aria-label="Проект: CoffeeChain Data Platform">
+            <div class="card__media">
+              <img src="https://images.unsplash.com/photo-1788404804977-517ab54bd930?auto=format&fit=crop&w=960&h=720&q=70" alt="" loading="lazy" width="720" height="540" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">CoffeeChain Data Platform</h3>
+              <p class="card__meta"><span class="tag tag--wip">в работе</span><span>2026</span><span>Python · PostgreSQL</span></p>
+              <p class="card__note">
+                MVP платформы данных для сети кофеен поверх схемы CRM DoubleB:
+                батч-загрузка, трансформации, аналитическая модель.
+              </p>
+            </div>
+          </a>
+        </li>
+        -->
+      </ul>
+    </section>
+
+    <!-- ─────────────────── EARLIER: продукт и дизайн ─────────────────── -->
+    <section class="work work--earlier wrap" id="earlier" aria-labelledby="earlier-title">
+      <div class="section-head reveal">
+        <span class="section-index" aria-hidden="true">02</span>
+        <h2 class="section-title" id="earlier-title">Раньше: продукт и дизайн</h2>
+        <p class="section-sub">
+          Кейсы, статьи и выступление. Отсюда у меня понимание, зачем данные
+          продукту. Остальные дизайн-работы лежат
+          <a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">на Dprofile</a>.
+        </p>
+      </div>
+
+      <!-- Табы-фильтр отключены: в блоке шесть карточек, фильтровать их незачем.
+           Чтобы вернуть, раскомментируй. main.js подхватит их сам и будет
+           фильтровать карточки внутри #work-grid.
+      <div class="tabs reveal" role="tablist" aria-label="Фильтр работ">
+        <span class="tabs__indicator" aria-hidden="true"></span>
+        <button class="tab is-active" role="tab" aria-selected="true" data-filter="all">Всё</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="recent">Недавно</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="articles">Статьи</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="projects">Проекты</button>
+      </div>
+      -->
+
+      <!-- grid--compact делает из тех же карточек компактные строки с маленьким превью.
+           Убери этот класс, и карточки снова станут большими. -->
+      <ul class="grid grid--compact" id="work-grid">
         <li class="card reveal" data-type="projects">
           <a class="card__link" href="https://dprofile.ru/case/142589/calendar" aria-label="Проект: .Calendar">
             <div class="card__media">
@@ -147,21 +373,7 @@
             </div>
           </a>
         </li>
-        <li class="card reveal" data-type="projects">
-          <a class="card__link" href="https://github.com/withapoll/doubleB-CRM" aria-label="Проект: crm-платформа">
-            <div class="card__media">
-              <img src="https://user-images.githubusercontent.com/59768263/297371052-24a85b3d-488e-4bcf-99a4-22fba70d955e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODQ4MzAxMDgsIm5iZiI6MTc4NDgyOTgwOCwicGF0aCI6Ii81OTc2ODI2My8yOTczNzEwNTItMjRhODViM2QtNDg4ZS00YmNmLTk5YTQtMjJmYmE3MGQ5NTVlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNzIzVDE4MDMyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5ZDdhNTZjMmMzNzg1ZjAwZWYwMTk0ZTg0NmExY2Y0ZTZiYzQ4MTA4ZTVjNzU5OTRkZmNmYzU0MmNjMjJjODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.rkrM3wC3w9Rni4_a6tg7a3GhJT-WizgmFSZLfMlmTiA" alt="" loading="lazy" width="720" height="540" />
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">CRM для DoubleB</h3>
-              <p class="card__meta"><span>2025</span><span>Vue · Supabase</span></p>
-              <p class="card__note">
-                Веб-приложение для управления заказами. Задеплоено.
-              </p>
-            </div>
-          </a>
-        </li>
-        
+
         <!-- ───────────────────────── recent ───────────────────────── -->
         <li class="card reveal" data-type="recent">
           <a class="card__link" href="https://vkvideo.ru/playlist/-58525095_34/video-58525095_456240185?linked=1" aria-label="Выступление на конференции IT-Park">
@@ -238,11 +450,13 @@
     <!-- ───────────────────────── STACK ───────────────────────── -->
     <section class="stack wrap" id="stack" aria-labelledby="stack-title">
       <div class="section-head reveal">
-        <span class="section-index" aria-hidden="true">02</span>
+        <!-- <span class="section-index" aria-hidden="true">02</span> -->
+        <span class="section-index" aria-hidden="true">03</span>
         <h2 class="section-title" id="stack-title">Стек</h2>
         <p class="section-sub">Чем работаю каждый день — и что осваиваю прямо сейчас.</p>
       </div>
 
+      <!-- Старый порядок: Дизайн → Frontend → Backend и данные → Учу сейчас
       <div class="stack__groups">
         <div class="stack__group reveal">
           <h3>Дизайн</h3>
@@ -261,6 +475,25 @@
           <ul><li>Apache Airflow</li><li>dbt</li><li>Моделирование хранилищ</li></ul>
         </div>
       </div>
+      -->
+      <div class="stack__groups">
+        <div class="stack__group stack__group--focus reveal">
+          <h3>Данные</h3>
+          <ul><li>Python</li><li>SQL: оконные функции, витрины</li><li>PostgreSQL</li><li>Docker</li><li>Git</li><li>GitHub Actions</li><li>pytest</li></ul>
+        </div>
+        <div class="stack__group stack__group--learning reveal">
+          <h3>Изучаю</h3>
+          <ul><li>Apache Airflow</li><li>dbt</li><li>Моделирование хранилищ</li></ul>
+        </div>
+        <div class="stack__group reveal">
+          <h3>Продукт и фронтенд</h3>
+          <ul><li>TypeScript</li><li>Vue</li><li>React</li><li>REST API</li></ul>
+        </div>
+        <div class="stack__group reveal">
+          <h3>Дизайн</h3>
+          <ul><li>UX-исследования, прототипирование, Figma</li></ul>
+        </div>
+      </div>
     </section>
 
     <!-- ───────────────────────── CONTACT ───────────────────────── -->
@@ -268,10 +501,18 @@
       <div class="contact__inner reveal">
         <p class="contact__eyebrow"><span class="dot dot--live" aria-hidden="true"></span>Открыт к предложениям</p>
         <h2 class="contact__title" id="contact-title">Давайте сделаем<br />хороший продукт.</h2>
-        <p class="contact__lead">Ищу команду, где дизайн и разработка не живут в разных мирах. Напишите, обсудим.</p>
-        <p class="contact__sub">Делаю лендинги, веб-приложения и продуктовый дизайн под ключ.</p>
+        <!-- <p class="contact__lead">Ищу команду, где дизайн и разработка не живут в разных мирах. Напишите, обсудим.</p> -->
+        <p class="contact__lead">Ищу позицию Junior Data Engineer или стажировку в продуктовой команде. Напишите, обсудим.</p>
+        <!-- <p class="contact__sub">Делаю лендинги, веб-приложения и продуктовый дизайн под ключ.</p> -->
+        <!-- <div class="contact__actions">
+          <a class="btn btn--primary" href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram · @amlrds</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
+        </div> -->
         <div class="contact__actions">
           <a class="btn btn--primary" href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram · @amlrds</a>
+          <!-- TODO: подставь в href ссылку на PDF резюме (сейчас заглушка "#") -->
+          <a class="btn btn--ghost" href="#" data-todo="resume">Скачать резюме</a>
+          <a class="btn btn--ghost" href="mailto:drew7@vk.com">drew7@vk.com</a>
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
@@ -281,10 +522,18 @@
   <!-- ───────────────────────── FOOTER ───────────────────────── -->
   <footer class="footer">
     <div class="wrap">
-      <p class="footer__awards">
+      <!-- <p class="footer__awards">
         <span class="footer__awards-label">Награды</span>
         Инженерный хакатон СТАНКИН — 1 место · Alfa Case Camp — топ-30/350 ·
         CUP Moscow — топ-15%
+      </p> -->
+      <!-- TODO: сверь формулировки с резюме. Про полуфинал Яндекс Рекламы я знаю
+           только сам факт, точного названия чемпионата и года у меня нет. -->
+      <p class="footer__awards">
+        <span class="footer__awards-label">Награды</span>
+        Инженерный хакатон СТАНКИН: 1 место · Alfa Case Camp, ВШЭ × SBS:
+        полуфинал, топ-30 из 350 · Яндекс&nbsp;Реклама: полуфинал ·
+        CUP&nbsp;Moscow: топ-15%
       </p>
       <div class="footer__inner">
         <a class="wordmark wordmark--sm" href="#top">AMLRD</a>
@@ -292,9 +541,12 @@
           <a href="https://github.com/withapoll" target="_blank" rel="noopener">GitHub</a>
           <a href="https://t.me/amlrds" target="_blank" rel="noopener">Telegram</a>
           <a href="https://www.linkedin.com/in/withapoll/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a>
+          <a href="mailto:drew7@vk.com">drew7@vk.com</a>
+          <!-- Dprofile переехал в блок «Раньше: продукт и дизайн» -->
+          <!-- <a href="https://dprofile.ru/amlrd" target="_blank" rel="noopener">Dprofile</a> -->
         </nav>
-        <p class="footer__copy">© <span id="year">2025</span> amlrd</p>
+        <!-- <p class="footer__copy">© <span id="year">2025</span> amlrd</p> -->
+        <p class="footer__copy">© <span id="year">2026</span> amlrd</p>
       </div>
     </div>
   </footer>
